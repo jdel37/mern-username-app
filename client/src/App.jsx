@@ -9,7 +9,7 @@ function App() {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('/api/users');
+                const response = await axios.get('https://mern-username-app.onrender.com/users');
                 setUsers(response.data);
             } catch (err) {
                 console.error('Error fetching users:', err);
@@ -20,7 +20,7 @@ function App() {
 
     const handleAddUser = async (newUser) => {
         try {
-            const response = await axios.post('/api/users', newUser);
+            const response = await axios.post('https://mern-username-app.onrender.com/users', newUser);
             setUsers([...users, response.data]);
         } catch (err) {
             console.error('Error adding user:', err);
@@ -29,7 +29,7 @@ function App() {
 
     const handleDeleteUser = async (id) => {
         try {
-            await axios.delete(`/api/users/${id}`);
+            await axios.delete(`https://mern-username-app.onrender.com/users/${id}`);
             setUsers(users.filter(user => user._id !== id));
         } catch (err) {
             console.error('Error deleting user:', err);
