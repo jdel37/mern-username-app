@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import UserForm from '../src/components/UserForm.jsx';
-import UserList from '../src/components/UserList.jsx';
+import UserForm from './components/userForm.jsx';
+import UserList from './components/userList.jsx';
 
 function App() {
     const [users, setUsers] = useState([]);
